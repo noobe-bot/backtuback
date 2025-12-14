@@ -4,6 +4,6 @@
   "message": "您的设备上有可用更新。",
   "showCloseButton": false,
   "UpdateButtonUrl": "https://t.me/killerducky",
-  "showUpdateButton": true,
+  "showUpdateButton": false,
   "UpdateButtonText": "立即更新"
 }
