@@ -20,20 +20,20 @@
       "text": "Dismiss",
       "color": "#3A4A4B",
       "text_color": "#FFFFFF",
-      "enabled": true
+      "enabled": false
     },
     "update_button": {
       "text": "badbku",
       "color": "#00BFFF",
       "text_color": "#FFFFFF",
-      "enabled": true,
+      "enabled": false,
       "link": "https://example.com/update"
     },
     "join_telegram_button": {
       "text": "Join Telegram",
       "color": "#00BFFF",
       "text_color": "#FFFFFF",
-      "enabled": true,
+      "enabled": false,
       "link": "https://t.me/your_channel"
     }
   }
