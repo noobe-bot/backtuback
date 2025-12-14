@@ -1,6 +1,6 @@
 {
   "showDialog": false,
-  "title": "Update Available",
+  "title": "可用更新",
   "message": "An Update is available on your device",
   "showCloseButton": false,
   "UpdateButtonUrl": "https://t.me/Yummy_Mods",
