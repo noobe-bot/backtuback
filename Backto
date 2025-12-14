@@ -1,5 +1,5 @@
 {
-  "showDialog": false,
+  "showDialog": true,
   "title": "可用更新",
   "message": "您的设备上有可用更新。",
   "showCloseButton": false,
