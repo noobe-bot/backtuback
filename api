@@ -1,0 +1,45 @@
+export default async function handler(req, res) {
+  if (req.method !== "POST") {
+    return res.status(200).send("OK");
+  }
+
+  const BOT_TOKEN = process.env.BOT_TOKEN;
+  const CHANNEL_ID = process.env.CHANNEL_ID;
+  const API = `https://api.telegram.org/bot${BOT_TOKEN}`;
+
+  const update = req.body;
+  const msg = update.message;
+  if (!msg) return res.status(200).json({ ok: true });
+
+  const from = msg.from?.username || "unknown";
+
+  if (msg.text) {
+    await send(API, "sendMessage", {
+      chat_id: CHANNEL_ID,
+      text: `📩 New Message\n👤 @${from}\n\n${msg.text}`
+    });
+  } else if (msg.photo) {
+    const photoId = msg.photo[msg.photo.length - 1].file_id;
+    await send(API, "sendPhoto", {
+      chat_id: CHANNEL_ID,
+      photo: photoId,
+      caption: `🖼 Photo from @${from}`
+    });
+  } else if (msg.document) {
+    await send(API, "sendDocument", {
+      chat_id: CHANNEL_ID,
+      document: msg.document.file_id,
+      caption: `📁 ${msg.document.file_name}\nFrom @${from}`
+    });
+  }
+
+  res.status(200).json({ ok: true });
+}
+
+async function send(api, method, data) {
+  await fetch(`${api}/${method}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
+  });
+}
