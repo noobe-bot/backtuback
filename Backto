@@ -1,9 +1,0 @@
-{
-  "showDialog": false,
-  "title": "可用更新",
-  "message": "您的设备上有可用更新。",
-  "showCloseButton": false,
-  "UpdateButtonUrl": "https://t.me/killerducky",
-  "showUpdateButton": false,
-  "UpdateButtonText": "立即更新"
-}
